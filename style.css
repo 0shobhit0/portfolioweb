@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2em;
+    background: #fff;
+    transition: 0.5s;
+    text-align: center;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+header .logo {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+header .logo span {
+    color: orange;
+}
+
+header nav {
+    position: relative;
+}
+
+header nav ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    color: #222;
+    transition: 0.5s;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.5em;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+}
+
+.content {
+    position: relative;
+    max-width: 700px;
+    padding: 1em;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: #333;
+    transition: 0.5s;
+}
+
+.content h2 span {
+    color: orange;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+.content .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.content button {
+    background: orange;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 600;
+}
+
+.content button.chat {
+    background: transparent;
+    color: #333;
+}
+
+.dayNight {
+    position: absolute;
+    bottom: 1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3em;
+    height: 3em;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+.dayNight ion-icon:nth-child(2),
+.banner.night .dayNight ion-icon:nth-child(1) {
+    display: none;
+}
+
+.banner.night .dayNight ion-icon:nth-child(2) {
+    display: block;
+}
+
+.banner.night {
+    background: #333;
+}
+
+.banner.night .dayNight {
+    color: #fff;
+    background: #444;
+}
+
+.banner.night header .logo,
+.banner.night .content h2,
+.banner.night .content p,
+.banner.night .content button.chat,
+.banner.night header nav ul li a {
+    color: #fff;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+    .content h2 {
+        font-size: 4em;
+    }
+
+    .content .buttons {
+        flex-direction: row;
+    }
+
+    .content button {
+        padding: 1em 2em;
+    }
+
+    header .logo {
+        font-size: 2em;
+    }
+
+    header nav ul li a {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .content {
+        padding: 0 2em;
+    }
+
+    header {
+        padding: 1em 4em;
+    }
+
+    header .logo {
+        font-size: 2.5em;
+    }
+
+    header nav ul li a {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 767px) {
+    header nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 1em;
+        background: #fff;
+        padding: 1em 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav ul li {
+        text-align: center;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
